@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>please allow location to show you cool venus near to your location</string>
 </dict>
 </plist>
