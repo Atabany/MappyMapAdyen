@@ -16,6 +16,15 @@
 		2D954DE828988B8C00534E7C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954DE728988B8C00534E7C /* Coordinator.swift */; };
 		2D954DEC28988BBC00534E7C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954DEB28988BBC00534E7C /* MainCoordinator.swift */; };
 		2D954DEF28988C3800534E7C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954DEE28988C3800534E7C /* HomeCoordinator.swift */; };
+		2D954DF42898923000534E7C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954DF32898923000534E7C /* RoundedButton.swift */; };
+		2DA9BD0D2899E9A70090026A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9BD022899E9A70090026A /* NetworkManager.swift */; };
+		2DA9BD0E2899E9A70090026A /* VenusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9BD042899E9A70090026A /* VenusResponse.swift */; };
+		2DA9BD0F2899E9A70090026A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9BD062899E9A70090026A /* Environment.swift */; };
+		2DA9BD102899E9A70090026A /* VenusServiceEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9BD072899E9A70090026A /* VenusServiceEndPoints.swift */; };
+		2DA9BD112899E9A70090026A /* VenusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9BD082899E9A70090026A /* VenusService.swift */; };
+		2DA9BD122899E9A70090026A /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9BD0A2899E9A70090026A /* Requestable.swift */; };
+		2DA9BD132899E9A70090026A /* NativeRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9BD0B2899E9A70090026A /* NativeRequestable.swift */; };
+		2DA9BD142899E9A70090026A /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9BD0C2899E9A70090026A /* NetworkRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,15 @@
 		2D954DE728988B8C00534E7C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2D954DEB28988BBC00534E7C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		2D954DEE28988C3800534E7C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		2D954DF32898923000534E7C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		2DA9BD022899E9A70090026A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2DA9BD042899E9A70090026A /* VenusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenusResponse.swift; sourceTree = "<group>"; };
+		2DA9BD062899E9A70090026A /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		2DA9BD072899E9A70090026A /* VenusServiceEndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenusServiceEndPoints.swift; sourceTree = "<group>"; };
+		2DA9BD082899E9A70090026A /* VenusService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenusService.swift; sourceTree = "<group>"; };
+		2DA9BD0A2899E9A70090026A /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		2DA9BD0B2899E9A70090026A /* NativeRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeRequestable.swift; sourceTree = "<group>"; };
+		2DA9BD0C2899E9A70090026A /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,23 +80,15 @@
 		2D954DCD2898880600534E7C /* MappyMapAdyenTask */ = {
 			isa = PBXGroup;
 			children = (
+				2DA9BD1B289A166C0090026A /* App Scene Delegate */,
+				2DA9BD1A289A16630090026A /* Resources */,
+				2DA9BD18289A16590090026A /* Scenes */,
+				2DA9BD012899E9A70090026A /* Networking */,
+				2D954DF02898921600534E7C /* UI */,
 				2D954DE328988B0C00534E7C /* Coordinator */,
-				2D954DE22898894B00534E7C /* NetworkLayer */,
-				2D954DCE2898880600534E7C /* AppDelegate.swift */,
-				2D954DD02898880600534E7C /* SceneDelegate.swift */,
-				2D954DD22898880600534E7C /* HomeViewController.swift */,
-				2D954DD72898880900534E7C /* Assets.xcassets */,
-				2D954DD92898880900534E7C /* LaunchScreen.storyboard */,
 				2D954DDC2898880900534E7C /* Info.plist */,
 			);
 			path = MappyMapAdyenTask;
-			sourceTree = "<group>";
-		};
-		2D954DE22898894B00534E7C /* NetworkLayer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		2D954DE328988B0C00534E7C /* Coordinator */ = {
@@ -122,6 +132,111 @@
 				2D954DEE28988C3800534E7C /* HomeCoordinator.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		2D954DF02898921600534E7C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2D954DF12898921C00534E7C /* Common */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2D954DF12898921C00534E7C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2D954DF22898922600534E7C /* Button */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2D954DF22898922600534E7C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				2D954DF32898923000534E7C /* RoundedButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		2DA9BD012899E9A70090026A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2DA9BD022899E9A70090026A /* NetworkManager.swift */,
+				2DA9BD032899E9A70090026A /* Model */,
+				2DA9BD052899E9A70090026A /* Environment */,
+				2DA9BD082899E9A70090026A /* VenusService.swift */,
+				2DA9BD092899E9A70090026A /* Requestable */,
+				2DA9BD0C2899E9A70090026A /* NetworkRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2DA9BD032899E9A70090026A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2DA9BD042899E9A70090026A /* VenusResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2DA9BD052899E9A70090026A /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				2DA9BD062899E9A70090026A /* Environment.swift */,
+				2DA9BD072899E9A70090026A /* VenusServiceEndPoints.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		2DA9BD092899E9A70090026A /* Requestable */ = {
+			isa = PBXGroup;
+			children = (
+				2DA9BD0A2899E9A70090026A /* Requestable.swift */,
+				2DA9BD0B2899E9A70090026A /* NativeRequestable.swift */,
+			);
+			path = Requestable;
+			sourceTree = "<group>";
+		};
+		2DA9BD18289A16590090026A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2DA9BD19289A165C0090026A /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2DA9BD19289A165C0090026A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D954DD22898880600534E7C /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2DA9BD1A289A16630090026A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2D954DD72898880900534E7C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2DA9BD1B289A166C0090026A /* App Scene Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2DA9BD1C289A167C0090026A /* Launch */,
+				2D954DD02898880600534E7C /* SceneDelegate.swift */,
+				2D954DCE2898880600534E7C /* AppDelegate.swift */,
+			);
+			path = "App Scene Delegate";
+			sourceTree = "<group>";
+		};
+		2DA9BD1C289A167C0090026A /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				2D954DD92898880900534E7C /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,11 +309,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA9BD0D2899E9A70090026A /* NetworkManager.swift in Sources */,
+				2DA9BD122899E9A70090026A /* Requestable.swift in Sources */,
+				2DA9BD142899E9A70090026A /* NetworkRequest.swift in Sources */,
 				2D954DD32898880600534E7C /* HomeViewController.swift in Sources */,
 				2D954DEC28988BBC00534E7C /* MainCoordinator.swift in Sources */,
 				2D954DCF2898880600534E7C /* AppDelegate.swift in Sources */,
+				2D954DF42898923000534E7C /* RoundedButton.swift in Sources */,
 				2D954DE828988B8C00534E7C /* Coordinator.swift in Sources */,
 				2D954DD12898880600534E7C /* SceneDelegate.swift in Sources */,
+				2DA9BD0F2899E9A70090026A /* Environment.swift in Sources */,
+				2DA9BD132899E9A70090026A /* NativeRequestable.swift in Sources */,
+				2DA9BD0E2899E9A70090026A /* VenusResponse.swift in Sources */,
+				2DA9BD112899E9A70090026A /* VenusService.swift in Sources */,
+				2DA9BD102899E9A70090026A /* VenusServiceEndPoints.swift in Sources */,
 				2D954DEF28988C3800534E7C /* HomeCoordinator.swift in Sources */,
 				2D954DE528988B3400534E7C /* ApplicationCoordinator.swift in Sources */,
 			);
@@ -268,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -322,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
