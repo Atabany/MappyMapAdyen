@@ -1,5 +1,5 @@
 //
-//  VenusPlacesEndPoints.swift
+//  venuesPlacesEndPoints.swift
 //  CombineNetworkingExample
 //
 //  Created by Mohamed Elatabany on 12.10.2021.
@@ -10,7 +10,7 @@ import Foundation
 public typealias Headers = [String: String]
 
 
-enum VenusServiceEndPoints {
+enum venuesServiceEndPoints {
     
     struct Credential {
         let clientId : String
@@ -25,7 +25,7 @@ enum VenusServiceEndPoints {
     }
     
     // organise all the end points here for clarity
-    case getVenusPlaces(request: VenusRequest)
+    case getvenuesPlaces(request: venuesRequest)
     
     // gave a default timeout but can be different for each
     var requestTimeOut: Int {
@@ -46,7 +46,7 @@ enum VenusServiceEndPoints {
     // specify the type of HTTP request
     var httpMethod: HTTPMethod {
         switch self {
-        case .getVenusPlaces:
+        case .getvenuesPlaces:
             return .GET
         }
     }
@@ -54,19 +54,19 @@ enum VenusServiceEndPoints {
     // encodable request body for POST
     var requestBody: Encodable? {
         switch self {
-        case .getVenusPlaces:
+        case .getvenuesPlaces:
             return nil
         }
     }
     
     // compose the NetworkRequest
-    func createRequest(environment: Environment, venusRequest: VenusRequest) -> NetworkRequest {
+    func createRequest(environment: Environment, venuesRequest: venuesRequest) -> NetworkRequest {
         var headers: Headers = [:]
         headers["Accept"] = "application/json"
         headers["Content-Type"] = "application/json"
         headers["Authorization"] = "fsq3huPUxb7GlkVLfEFoI/9xgkKBAjwi6pjCdgigViNAdJ4="
         
-        return NetworkRequest(url: getURL(from: environment, request: venusRequest),
+        return NetworkRequest(url: getURL(from: environment, request: venuesRequest),
                               headers: headers,
                               reqBody: requestBody,
                               httpMethod: httpMethod)
@@ -75,7 +75,7 @@ enum VenusServiceEndPoints {
     
     
     // compose urls for each request
-    func getURL(from environment: Environment, request: VenusRequest) -> URL? {
+    func getURL(from environment: Environment, request: venuesRequest) -> URL? {
         
         let paramaters: [String: String] = [
             "ll": request.ll,
@@ -90,7 +90,7 @@ enum VenusServiceEndPoints {
         urlComponents.setQueryItems(with: paramaters)
         
         switch self {
-        case .getVenusPlaces:
+        case .getvenuesPlaces:
             return urlComponents.url
         }
     }

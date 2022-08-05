@@ -9,11 +9,11 @@ import Foundation
 import Combine
 import MapKit
 
-protocol VenusServiceable {
-    func venusSearch(request: VenusRequest) -> AnyPublisher<VenusResponse, NetworkError>
+protocol venuesServiceable {
+    func venuesSearch(request: venuesRequest) -> AnyPublisher<venuesResponse, NetworkError>
 }
 
-class VenusService: VenusServiceable {
+class venuesService: venuesServiceable {
     
     private var networkRequest: Requestable
     private var environment: Environment = .development
@@ -23,14 +23,14 @@ class VenusService: VenusServiceable {
         self.environment = environment
     }
     
-    func venusSearch(request: VenusRequest) -> AnyPublisher<VenusResponse, NetworkError> {
-        let endpoint = VenusServiceEndPoints.getVenusPlaces(request: request)
-        let request = endpoint.createRequest(environment: environment, venusRequest: request)
+    func venuesSearch(request: venuesRequest) -> AnyPublisher<venuesResponse, NetworkError> {
+        let endpoint = venuesServiceEndPoints.getvenuesPlaces(request: request)
+        let request = endpoint.createRequest(environment: environment, venuesRequest: request)
         return networkRequest.request(request)
     }
 }
 
-public struct VenusRequest: Encodable {
+public struct venuesRequest: Encodable {
     public let ll: String
     public let radius: Int
     public let limit: Int
@@ -39,13 +39,13 @@ public struct VenusRequest: Encodable {
     public let version: String
 
     
-    init(credintials: VenusServiceEndPoints.Credential = VenusServiceEndPoints.credentials, limit: Int = 50, version: String = Environment.development.version, region: MKCoordinateRegion) {
+    init(credintials: venuesServiceEndPoints.Credential = venuesServiceEndPoints.credentials, limit: Int = 50, version: String = Environment.development.version, region: MKCoordinateRegion) {
         self.clientID = credintials.clientId
         self.clientSecret = credintials.clientSecret
         self.version = version
         self.limit = limit
         self.ll = "\(region.center.latitude),\(region.center.longitude)"
-        self.radius = VenusRequest.getRadius(with: region)
+        self.radius = venuesRequest.getRadius(with: region)
     }
     
     

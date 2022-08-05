@@ -1,5 +1,5 @@
 //
-//  VenusResponse.swift
+//  venuesResponse.swift
 //  CombineNetworkingExample
 //
 //  Created by Mohamed Elatabany on 03/08/2022.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - VenusResponse
-struct VenusResponse: Codable {
+// MARK: - venuesResponse
+struct venuesResponse: Codable {
     let results: [Place]?
     let context: Context?
 }

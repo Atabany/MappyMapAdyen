@@ -19,11 +19,11 @@ class PlacesWorkerRepo: PlacesWorkerAble {
     var places = CurrentValueSubject<[Place], Never>([])
     var cancellAbles = Set<AnyCancellable>()
     
-    let venusService: VenusServiceable
+    let venuesService: venuesServiceable
     var mapRegion: MKCoordinateRegion?
     
-    init(service: VenusServiceable) {
-        self.venusService = service
+    init(service: venuesServiceable) {
+        self.venuesService = service
     }
     
     func getPlaces() {
@@ -31,8 +31,8 @@ class PlacesWorkerRepo: PlacesWorkerAble {
             return
         }
 
-        let venusRequest = VenusRequest(region: mapRegion)
-        venusService.venusSearch(request: venusRequest)
+        let venuesRequest = venuesRequest(region: mapRegion)
+        venuesService.venuesSearch(request: venuesRequest)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {

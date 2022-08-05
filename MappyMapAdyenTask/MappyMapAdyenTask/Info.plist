@@ -20,6 +20,6 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>please allow location to show you cool venus near to your location</string>
+	<string>please allow location to show you cool venues near to your location</string>
 </dict>
 </plist>

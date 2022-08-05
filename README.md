@@ -1,6 +1,6 @@
 # MappyMapAdyen
 
-This project is a sample coding challenge app for Adyen to show some venus around user location and the user have the ability to change the region and search the venus around this specific region.
+This project is a sample coding challenge app for Adyen to show some venues around user location and the user have the ability to change the region and search the venues around this specific region.
 
 Now we will show a quick guide about the main classes in the project, the structure of the targets, as well as the pattern used.
 
@@ -35,7 +35,7 @@ Data ( models ) fetcher for the places to seprate the concerns, and to be reusab
   
 ## UX
 
-User can choose specific region on the map and then press search to show the venus around this region of the map
+User can choose specific region on the map and then press search to show the venues around this region of the map
 
 
 ## FAQ
