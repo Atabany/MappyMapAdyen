@@ -9,7 +9,6 @@ import UIKit
 import MapKit
 import Combine
 
-
 final class HomeViewController: UIViewController {
     
     // MARK: - UI Components
@@ -31,17 +30,23 @@ final class HomeViewController: UIViewController {
         return button
     }()
     
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
+    
     var cancellables = Set<AnyCancellable>()
     let viewModel: HomeViewModelProtocol
     private var annotations: [MKPointAnnotation] = []
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
         binding()
-        bindUserLocation()
     }
     
     init(viewModel: HomeViewModelProtocol) {
@@ -60,6 +65,12 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     
     private func binding() {
+        bindPlaces()
+        bindUserLocation()
+        bindState()
+    }
+    
+    private func bindPlaces() {
         viewModel.places
             .receive(on: DispatchQueue.main)
             .compactMap {
@@ -86,7 +97,23 @@ extension HomeViewController {
             }
             .store(in: &cancellables)
     }
-
+    
+    private func bindState() {
+        viewModel
+            .state
+            .sink { [weak self] in
+                switch $0 {
+                case .loaded:
+                    self?.activityIndicator.stopAnimating()
+                case .loading:
+                    self?.activityIndicator.startAnimating()
+                default:
+                    self?.activityIndicator.stopAnimating()
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
 }
 
 // MARK: - Map
@@ -119,6 +146,7 @@ extension HomeViewController {
     private func layout() {
         layoutMapView()
         layoutSearchButton()
+        layoutActivatiyIndicator()
     }
     
     private func layoutMapView() {
@@ -138,6 +166,15 @@ extension HomeViewController {
             searchButton.heightAnchor.constraint(equalTo: searchButton.widthAnchor),
             view.bottomAnchor.constraint(equalToSystemSpacingBelow: searchButton.bottomAnchor, multiplier: 6),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: searchButton.trailingAnchor, multiplier: 2)
+        ])
+    }
+    
+    
+    private func layoutActivatiyIndicator() {
+        view.addSubview(activityIndicator)
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
     

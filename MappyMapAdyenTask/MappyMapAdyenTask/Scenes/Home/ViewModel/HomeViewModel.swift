@@ -12,10 +12,17 @@ import Combine
 protocol HomeViewModelProtocol {
     var places: CurrentValueSubject<[Place], Never> { get set }
     var userLocation:  CurrentValueSubject<CLLocation?, Never> { get set }
+    var state: CurrentValueSubject<State, Never> { get set }
     func userDidChangeMap(region: MKCoordinateRegion)
     func userDidPressSearch()
 }
 
+enum State {
+    case initial
+    case loading
+    case loaded
+    case empty
+}
 
 final public class HomeViewModel: HomeViewModelProtocol {
     
@@ -23,6 +30,7 @@ final public class HomeViewModel: HomeViewModelProtocol {
     
     var places: CurrentValueSubject<[Place], Never> = CurrentValueSubject<[Place], Never>([])
     var userLocation: CurrentValueSubject<CLLocation?, Never> = CurrentValueSubject<CLLocation?, Never>(nil)
+    var state: CurrentValueSubject<State, Never> = CurrentValueSubject<State, Never>(.initial)
     var cancellables = Set<AnyCancellable>()
     
     private let placesWorkerRepo: PlacesWorkerAble
@@ -43,6 +51,7 @@ final public class HomeViewModel: HomeViewModelProtocol {
         placesWorkerRepo.places
             .sink { [weak self] in
                 self?.places.send($0)
+                self?.state.value = $0.isEmpty ? .empty : .loaded
             }
             .store(in: &cancellables)
     }
@@ -55,6 +64,7 @@ final public class HomeViewModel: HomeViewModelProtocol {
     }
     
     func userDidPressSearch() {
+        self.state.value = .loading
         placesWorkerRepo.getPlaces()
     }
     
