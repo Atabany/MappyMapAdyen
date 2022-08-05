@@ -1,0 +1,16 @@
+//
+//  UIViewController+Extensions.swift
+//  MappyMapAdyenTask
+//
+//  Created by Mohamed Elatabany on 05/08/2022.
+//
+
+import UIKit
+
+extension UIViewController {
+    func showAlert(_ message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true)
+    }
+}

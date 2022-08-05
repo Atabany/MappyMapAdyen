@@ -21,7 +21,7 @@ enum State {
     case initial
     case loading
     case loaded
-    case empty
+    case empty(msg: String)
 }
 
 final public class HomeViewModel: HomeViewModelProtocol {
@@ -51,7 +51,7 @@ final public class HomeViewModel: HomeViewModelProtocol {
         placesWorkerRepo.places
             .sink { [weak self] in
                 self?.places.send($0)
-                self?.state.value = $0.isEmpty ? .empty : .loaded
+                self?.state.value = $0.isEmpty ? .empty(msg: Constants.errorMessages.emptyPlaces) : .loaded
             }
             .store(in: &cancellables)
     }

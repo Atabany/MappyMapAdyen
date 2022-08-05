@@ -110,8 +110,9 @@ extension HomeViewController {
                     self?.activityIndicator.stopAnimating()
                 case .loading:
                     self?.activityIndicator.startAnimating()
-                default:
-                    self?.activityIndicator.stopAnimating()
+                case .empty(let msg):
+                    self?.activityIndicator.startAnimating()
+                    self?.showAlert(msg)
                 }
             }
             .store(in: &cancellables)

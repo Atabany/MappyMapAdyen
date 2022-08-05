@@ -12,4 +12,8 @@ enum Constants {
     enum reuseID {
         static let mapAnnotationReuseID = "mapAnnotationReuseID"
     }
+    
+    enum errorMessages {
+        static let emptyPlaces = "No places in the area"
+    }
 }
