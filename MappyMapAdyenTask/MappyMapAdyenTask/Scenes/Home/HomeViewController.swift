@@ -24,7 +24,7 @@ final class HomeViewController: UIViewController {
         let button = CircleButton(backgroundColor: .systemBackground, systemImageName: "magnifyingglass")
         button.addAction(
           UIAction { [weak self] _ in
-              self?.viewModel.userDidPressSearch()
+              self?.viewModel.search()
           }, for: .touchUpInside
         )
         return button
@@ -71,7 +71,8 @@ extension HomeViewController {
     }
     
     private func bindPlaces() {
-        viewModel.places
+        viewModel
+            .places
             .receive(on: DispatchQueue.main)
             .compactMap {
                 $0.map { MapKitHelper.createPin(with: $0) }
@@ -103,6 +104,8 @@ extension HomeViewController {
             .state
             .sink { [weak self] in
                 switch $0 {
+                case .initial:
+                    self?.viewModel.search()
                 case .loaded:
                     self?.activityIndicator.stopAnimating()
                 case .loading:

@@ -14,7 +14,7 @@ protocol HomeViewModelProtocol {
     var userLocation:  CurrentValueSubject<CLLocation?, Never> { get set }
     var state: CurrentValueSubject<State, Never> { get set }
     func userDidChangeMap(region: MKCoordinateRegion)
-    func userDidPressSearch()
+    func search()
 }
 
 enum State {
@@ -63,7 +63,7 @@ final public class HomeViewModel: HomeViewModelProtocol {
         placesWorkerRepo.setRegion(mapRegion: region)
     }
     
-    func userDidPressSearch() {
+    func search() {
         self.state.value = .loading
         placesWorkerRepo.getPlaces()
     }
@@ -72,8 +72,10 @@ final public class HomeViewModel: HomeViewModelProtocol {
     func bindUserLocation() {
         locationManager
             .$lastLocation
+            .removeDuplicates()
             .sink {[weak self]  in
                 self?.userLocation.send($0)
+                self?.search()
             }
             .store(in: &cancellables)
     }
