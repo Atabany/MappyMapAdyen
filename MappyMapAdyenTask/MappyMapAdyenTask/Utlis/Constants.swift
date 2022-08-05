@@ -14,6 +14,6 @@ enum Constants {
     }
     
     enum errorMessages {
-        static let emptyPlaces = "No places in the area"
+        static let emptyPlaces = "No places in this area"
     }
 }

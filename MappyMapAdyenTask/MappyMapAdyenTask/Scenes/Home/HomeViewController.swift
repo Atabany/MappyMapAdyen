@@ -111,7 +111,7 @@ extension HomeViewController {
                 case .loading:
                     self?.activityIndicator.startAnimating()
                 case .empty(let msg):
-                    self?.activityIndicator.startAnimating()
+                    self?.activityIndicator.stopAnimating()
                     self?.showAlert(msg)
                 }
             }
