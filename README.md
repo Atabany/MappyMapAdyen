@@ -31,7 +31,7 @@ HomeViewModel some business logic and the middleWare between HomeViewController 
 Data ( models ) fetcher for the places to seprate the concerns, and to be reusable and not tighted to the viewModel 
 
 #### - Networking  
-  The app uses URLSession using Combine
+  The app uses URLSession with Combine
   
 ## UX
 
