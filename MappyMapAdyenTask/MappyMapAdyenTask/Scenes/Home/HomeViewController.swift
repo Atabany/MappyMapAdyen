@@ -10,7 +10,7 @@ import MapKit
 import Combine
 
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     // MARK: - UI Components
     let mapView: MKMapView = {
@@ -26,41 +26,51 @@ class HomeViewController: UIViewController {
     }()
     
     var subscriptions = Set<AnyCancellable>()
-
+    let viewModel: HomeViewModelProtocol
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
-        let center = CLLocationCoordinate2D(latitude: 50, longitude: 50)
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 50, longitudinalMeters: 50)
-//        NetworkManager().
-//        NetworkManager().searchVenus(requst: VenusRequest(region: region))
-        
-        let service = VenusService(networkRequest: NativeRequestable(),
-                                      environment: .development)
-        
-     searchVenus(requst: VenusRequest(region: region), service: service)
+        binding()
     }
     
-    func searchVenus(requst: VenusRequest, service: VenusService) {
-        service.venusSearch(request: requst)
-            .sink { (completion) in
-                switch completion {
-                case .failure(let error):
-                    debugPrint("oops got an error \(error.localizedDescription)")
-                case .finished:
-                    debugPrint("nothing much to do here")
-                }
-            } receiveValue: { (response) in
-                debugPrint("got my response here \(response)")
+    init(viewModel: HomeViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// MARK: - Biniding
+
+extension HomeViewController {
+    
+    private func binding() {
+        viewModel.places
+            .receive(on: DispatchQueue.main)
+            .sink {
+                print($0)
             }
             .store(in: &subscriptions)
+        
     }
+    
+}
 
+// MARK: - Map
 
+extension HomeViewController {
+    
+    
 }
 
 
+// MARK: - Style & Layout
 
 extension HomeViewController {
     
@@ -93,7 +103,5 @@ extension HomeViewController {
         ])
     }
     
-    
 }
-
 

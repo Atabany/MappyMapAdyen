@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D49124B289B3F9F00ECD2C3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49124A289B3F9F00ECD2C3 /* LocationManager.swift */; };
+		2D49124E289B405700ECD2C3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49124D289B405700ECD2C3 /* HomeViewModel.swift */; };
+		2D491251289B411500ECD2C3 /* PlacesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D491250289B411500ECD2C3 /* PlacesWorker.swift */; };
+		2D491254289B461200ECD2C3 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D491253289B461200ECD2C3 /* Alias.swift */; };
 		2D954DCF2898880600534E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954DCE2898880600534E7C /* AppDelegate.swift */; };
 		2D954DD12898880600534E7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954DD02898880600534E7C /* SceneDelegate.swift */; };
 		2D954DD32898880600534E7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D954DD22898880600534E7C /* HomeViewController.swift */; };
@@ -28,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D49124A289B3F9F00ECD2C3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		2D49124D289B405700ECD2C3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2D491250289B411500ECD2C3 /* PlacesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesWorker.swift; sourceTree = "<group>"; };
+		2D491253289B461200ECD2C3 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		2D954DCB2898880600534E7C /* MappyMapAdyenTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MappyMapAdyenTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D954DCE2898880600534E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D954DD02898880600534E7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +69,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D491249289B3F9800ECD2C3 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				2D49124A289B3F9F00ECD2C3 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		2D49124C289B404D00ECD2C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D49124D289B405700ECD2C3 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D49124F289B410800ECD2C3 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2D491250289B411500ECD2C3 /* PlacesWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2D491252289B460B00ECD2C3 /* Utlis */ = {
+			isa = PBXGroup;
+			children = (
+				2D491253289B461200ECD2C3 /* Alias.swift */,
+			);
+			path = Utlis;
+			sourceTree = "<group>";
+		};
 		2D954DC22898880600534E7C = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +120,8 @@
 		2D954DCD2898880600534E7C /* MappyMapAdyenTask */ = {
 			isa = PBXGroup;
 			children = (
+				2D491252289B460B00ECD2C3 /* Utlis */,
+				2D491249289B3F9800ECD2C3 /* Location */,
 				2DA9BD1B289A166C0090026A /* App Scene Delegate */,
 				2DA9BD1A289A16630090026A /* Resources */,
 				2DA9BD18289A16590090026A /* Scenes */,
@@ -208,6 +250,8 @@
 		2DA9BD19289A165C0090026A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2D49124F289B410800ECD2C3 /* Workers */,
+				2D49124C289B404D00ECD2C3 /* ViewModel */,
 				2D954DD22898880600534E7C /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -310,10 +354,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA9BD0D2899E9A70090026A /* NetworkManager.swift in Sources */,
+				2D49124E289B405700ECD2C3 /* HomeViewModel.swift in Sources */,
+				2D49124B289B3F9F00ECD2C3 /* LocationManager.swift in Sources */,
 				2DA9BD122899E9A70090026A /* Requestable.swift in Sources */,
+				2D491254289B461200ECD2C3 /* Alias.swift in Sources */,
 				2DA9BD142899E9A70090026A /* NetworkRequest.swift in Sources */,
 				2D954DD32898880600534E7C /* HomeViewController.swift in Sources */,
 				2D954DEC28988BBC00534E7C /* MainCoordinator.swift in Sources */,
+				2D491251289B411500ECD2C3 /* PlacesWorker.swift in Sources */,
 				2D954DCF2898880600534E7C /* AppDelegate.swift in Sources */,
 				2D954DF42898923000534E7C /* RoundedButton.swift in Sources */,
 				2D954DE828988B8C00534E7C /* Coordinator.swift in Sources */,

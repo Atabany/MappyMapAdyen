@@ -17,22 +17,3 @@ import Combine
  5. implement some tests
  */
 
-class NetworkManager {
-    var subscriptions = Set<AnyCancellable>()
-    let service = VenusService(networkRequest: NativeRequestable(),
-                                  environment: .development)
-    func searchVenus(requst: VenusRequest, service: VenusService) {
-        service.venusSearch(request: requst)
-            .sink { (completion) in
-                switch completion {
-                case .failure(let error):
-                    print("oops got an error \(error.localizedDescription)")
-                case .finished:
-                    print("nothing much to do here")
-                }
-            } receiveValue: { (response) in
-                print("got my response here \(response)")
-            }
-            .store(in: &subscriptions)
-    }
-}

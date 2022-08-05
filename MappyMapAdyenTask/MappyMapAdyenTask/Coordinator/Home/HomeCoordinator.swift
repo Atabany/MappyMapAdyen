@@ -16,10 +16,10 @@ class HomeCoordinator: Coordinator {
         rootViewController = UIViewController()
     }
     
-    
-    
     lazy var homeViewController: HomeViewController = {
-        let vc = HomeViewController()
+        let venusService = VenusService(networkRequest: NativeRequestable(), environment: .development)
+        let viewModel = HomeViewModel(placesWorkerRepo: PlacesWorkerRepo(service: venusService), locationManager: LocationManager())
+        let vc = HomeViewController(viewModel: viewModel)
         vc.title = "Home"
         return vc
     }()
