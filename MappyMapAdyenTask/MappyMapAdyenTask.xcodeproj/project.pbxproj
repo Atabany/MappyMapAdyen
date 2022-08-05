@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D39838E289D46BD00E52F55 /* MapKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D39838D289D46BD00E52F55 /* MapKit+Extensions.swift */; };
+		2D398390289D49BD00E52F55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D39838F289D49BD00E52F55 /* Constants.swift */; };
+		2D398394289D4B8100E52F55 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D398393289D4B8100E52F55 /* String+Extensions.swift */; };
 		2D49124B289B3F9F00ECD2C3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49124A289B3F9F00ECD2C3 /* LocationManager.swift */; };
 		2D49124E289B405700ECD2C3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49124D289B405700ECD2C3 /* HomeViewModel.swift */; };
 		2D491251289B411500ECD2C3 /* PlacesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D491250289B411500ECD2C3 /* PlacesWorker.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D39838D289D46BD00E52F55 /* MapKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Extensions.swift"; sourceTree = "<group>"; };
+		2D39838F289D49BD00E52F55 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2D398393289D4B8100E52F55 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2D49124A289B3F9F00ECD2C3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2D49124D289B405700ECD2C3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2D491250289B411500ECD2C3 /* PlacesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesWorker.swift; sourceTree = "<group>"; };
@@ -69,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D39838C289D46B000E52F55 /* Extensions + Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2D39838D289D46BD00E52F55 /* MapKit+Extensions.swift */,
+				2D398393289D4B8100E52F55 /* String+Extensions.swift */,
+			);
+			path = "Extensions + Helpers";
+			sourceTree = "<group>";
+		};
 		2D491249289B3F9800ECD2C3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				2D491253289B461200ECD2C3 /* Alias.swift */,
+				2D39838F289D49BD00E52F55 /* Constants.swift */,
 			);
 			path = Utlis;
 			sourceTree = "<group>";
@@ -120,14 +136,15 @@
 		2D954DCD2898880600534E7C /* MappyMapAdyenTask */ = {
 			isa = PBXGroup;
 			children = (
+				2D39838C289D46B000E52F55 /* Extensions + Helpers */,
 				2D491252289B460B00ECD2C3 /* Utlis */,
 				2D491249289B3F9800ECD2C3 /* Location */,
 				2DA9BD1B289A166C0090026A /* App Scene Delegate */,
 				2DA9BD1A289A16630090026A /* Resources */,
-				2DA9BD18289A16590090026A /* Scenes */,
 				2DA9BD012899E9A70090026A /* Networking */,
 				2D954DF02898921600534E7C /* UI */,
 				2D954DE328988B0C00534E7C /* Coordinator */,
+				2DA9BD18289A16590090026A /* Scenes */,
 				2D954DDC2898880900534E7C /* Info.plist */,
 			);
 			path = MappyMapAdyenTask;
@@ -354,7 +371,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA9BD0D2899E9A70090026A /* NetworkManager.swift in Sources */,
+				2D398390289D49BD00E52F55 /* Constants.swift in Sources */,
 				2D49124E289B405700ECD2C3 /* HomeViewModel.swift in Sources */,
+				2D39838E289D46BD00E52F55 /* MapKit+Extensions.swift in Sources */,
 				2D49124B289B3F9F00ECD2C3 /* LocationManager.swift in Sources */,
 				2DA9BD122899E9A70090026A /* Requestable.swift in Sources */,
 				2D491254289B461200ECD2C3 /* Alias.swift in Sources */,
@@ -370,6 +389,7 @@
 				2DA9BD132899E9A70090026A /* NativeRequestable.swift in Sources */,
 				2DA9BD0E2899E9A70090026A /* VenusResponse.swift in Sources */,
 				2DA9BD112899E9A70090026A /* VenusService.swift in Sources */,
+				2D398394289D4B8100E52F55 /* String+Extensions.swift in Sources */,
 				2DA9BD102899E9A70090026A /* VenusServiceEndPoints.swift in Sources */,
 				2D954DEF28988C3800534E7C /* HomeCoordinator.swift in Sources */,
 				2D954DE528988B3400534E7C /* ApplicationCoordinator.swift in Sources */,
